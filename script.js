@@ -1,12 +1,12 @@
-const add = function(x,y) {
+function add(x,y) {
 	return x + y
 };
 
-const subtract = function(x,y) {
+function substract(x,y) {
 	return x - y
 };
 
-const sum = function([...toSum]) {
+function sum([...toSum]) {
 	let totalSum = Number();
   for (const num of toSum) {
     totalSum += num
@@ -14,7 +14,22 @@ const sum = function([...toSum]) {
   return +totalSum;
 };
 
-const multiply = function([...toMultiply]) {
+function multiply([...toMultiply]) {
   return toMultiply.reduce((x,y) => x*y)
 };
 
+function divide(x,y) {
+    return x / y
+}
+
+function operate(operator, x, y) {
+  if (operator === '*') {
+    return multiply([x,y])
+  } else if (operator === '/') {
+    return divide(x,y)
+  } else if (operator === '+') {
+    return sum([x,y])
+  } else if (operator === '-') {
+    return substract(x,y)
+  }
+}
