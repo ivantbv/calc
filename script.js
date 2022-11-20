@@ -33,3 +33,40 @@ function operate(operator, x, y) {
     return substract(x,y)
   }
 }
+
+const allButtons = document.querySelectorAll('.buttons')
+const writingDisplay = document.querySelector('.writing-display')
+let displayValue = '';
+
+function populateDisplay(e) {
+  if (e.target.textContent === 'AC') {
+    writingDisplay.textContent = ''
+    displayValue = '';
+  } 
+  // else if (e.target.textContent == '+' || e.target.textContent == '×' || e.target.textContent == '÷' || e.target.textContent == '−') {
+
+  // }
+  else {
+    displayValue += e.target.textContent;
+    console.log(displayValue)
+    writingDisplay.textContent += e.target.textContent
+  }
+}
+//store the number before the operator
+//store the operator
+//store the number after the operator
+
+function splitDisplayValue(displValue, operator) {
+  return displValue.split(operator)
+}
+
+function getOperand(dispValue) {
+  let arr = [] 
+  arr = dispValue.match(/\D/)
+  return arr[0]
+}
+
+
+allButtons.forEach(btn => btn.addEventListener('click', populateDisplay))
+
+
