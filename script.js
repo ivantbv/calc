@@ -38,7 +38,22 @@ const allButtons = document.querySelectorAll('.buttons')
 const writingDisplay = document.querySelector('.writing-display')
 let displayValue = '';
 
+//when an operator is clicked
+//take the number before it and that operator and place them on the results display
+//when a number after the operator has been entered, clear the initial display
+
 function populateDisplay(e) {
+   if (e.target.textContent === '+' || e.target.textContent === '×' || e.target.textContent === '÷' || e.target.textContent === '−') {
+    if (writingDisplay.textContent.includes('+') || writingDisplay.textContent.includes('×') || writingDisplay.textContent.includes('÷') || writingDisplay.textContent.includes('−')) {
+      let operatorValue = getOperator(displayValue)
+      let operands = splitDisplayValue(displayValue, operatorValue)
+  
+      writingDisplay.textContent = operate(operatorValue, +operands[0], +operands[1])
+      displayValue = operate(operatorValue, +operands[0], +operands[1])
+    
+    }
+  }
+
   if (e.target.textContent === 'AC') {
     writingDisplay.textContent = ''
     displayValue = '';
@@ -50,15 +65,18 @@ function populateDisplay(e) {
     let operands = splitDisplayValue(displayValue, operatorValue)
 
     writingDisplay.textContent = operate(operatorValue, +operands[0], +operands[1])
-    displayValue = writingDisplay.textContent;
+    displayValue = operate(operatorValue, +operands[0], +operands[1])
     return;
-  }
+  } 
   // else if (e.target.textContent == '+' || e.target.textContent == '×' || e.target.textContent == '÷' || e.target.textContent == '−') {
 
   // }
   else {
+    if (!displayValue || displayValue.toString().slice().includes('undefined')) {
+      displayValue = '';
+    }
     displayValue += e.target.textContent;
-    console.log(displayValue)
+    console.log(typeof displayValue)
     writingDisplay.textContent += e.target.textContent
   }
 }
@@ -67,10 +85,16 @@ function populateDisplay(e) {
 //store the number after the operator
 
 function splitDisplayValue(displValue, operator) {
+  if (!displValue || !operator) {
+    return;
+  }
   return displValue.split(operator)
 }
 
 function getOperator(dispValue) {
+  if (!dispValue) {
+    return;
+  }
   let arr = [] 
   arr = dispValue.match(/\D/)
   return arr[0]
