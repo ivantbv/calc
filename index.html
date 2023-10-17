@@ -4,10 +4,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Calculator</title>
 </head>
 <body>
-    
+    <div class="calc-wrapper">
+        <div class="calc">
+            <div class="result-display">
+                <textarea name="" class="result" disabled></textarea>
+            </div>
+
+                <div class="display">
+                    <textarea class="writing-display" ></textarea>
+                </div>
+                    <div class="buttons">
+                        <!-- <div class="operands"> -->
+                            <button class="btn" data-key="55" id="seven">7</button>
+                            <button class="btn" data-key="56" id="eight">8</button>
+                            <button class="btn" data-key="57" id="nine">9</button>
+                            <button class="btn" data-key="191" id="divide">÷</button>
+
+                            <button class="btn" data-key="52" id="four">4</button>
+                            <button class="btn" data-key="53" id="five">5</button>
+                            <button class="btn" data-key="54" id="six">6</button>
+                            <button class="btn" data-key="56" id="multiply">×</button>
+                            <button class="btn" data-key="49" id="one">1</button>
+                            <button class="btn" data-key="50" id="two">2</button>
+                            <button class="btn" data-key="51" id="three">3</button>
+                            <button class="btn" data-key="189" id="minus">−</button>
+                            <button class="btn" data-key="48" id="zero">0</button>
+                        <!-- </div> -->
+                        <!-- <div class="operators"> -->
+                            <button class="btn" data-key="46" id="ac">AC</button>
+                            <button class="btn" data-key="13" id="equal">=</button>
+                            <!-- "shiftKey": true - for the multiplication! -->
+                            <!-- "shiftKey": true - for the addition! -->
+                            <button class="btn" data-key="187" id="plus">+</button>
+                        <!-- </div> -->
+                    </div>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

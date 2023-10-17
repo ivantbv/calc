@@ -1,0 +1,132 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+
+}
+
+/* .calc-wrapper {
+    display: flex;
+}
+.calc {
+    display: flex;
+    flex-direction: column;
+} */
+
+.writing-display, .result {
+    width: 316px;
+    height: 57px;
+    resize: none;
+    background: #e0eeef;
+    border: none;
+    border-radius: 5px;
+    font-family: arial;
+    font-size: 34px;
+    font-weight: 600;
+    white-space: nowrap;
+    /* padding: 1px 7px; */
+}
+
+.writing-display:focus {
+    outline: none;
+}
+
+.result {
+    color: #d1d1d1;
+    margin-bottom: -4px;
+    background: rgb(49 70 60);
+}
+
+.buttons {
+    display: grid;
+    /* width: 100%; */
+    height: 250px;
+
+    grid-template-areas: 
+        "a b c d"
+        "e f g h"
+        "i j k l"
+        "m n o p";
+    border: 2px solid #6b701f;
+    border-radius: 10px;
+    background: rgb(109, 192, 150);
+    /* grid-template-rows: 50px 50px 30px;
+    grid-template-columns: 50px 30px; */
+}
+
+.buttons button {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    background:rgb(180, 190, 185);
+    border: 1px solid black;
+    border-radius: 6px;
+
+}
+
+#seven {
+    grid-area: a;
+} 
+
+#eight {
+    grid-area: b;
+}
+
+#nine {
+    grid-area: c;
+}
+
+#divide {
+    grid-area: d;
+}
+
+#four {
+    grid-area: e;
+}
+
+#five {
+    grid-area: f;
+} 
+
+#six {
+    grid-area: g;
+}
+
+#multiply {
+    grid-area: h;
+}
+
+#one  {
+    grid-area: i;
+}
+
+#two {
+    grid-area: j;
+}
+
+#three {
+    grid-area: k;
+}
+
+#minus {
+    grid-area: l;
+}
+
+#zero {
+    grid-area: m;
+}
+
+#plus {
+    grid-area: n;
+}
+
+#equal {
+    grid-area: o;
+}
+
+#ac {
+    grid-area: p
+}
